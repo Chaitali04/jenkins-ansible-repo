@@ -10,7 +10,7 @@ pipeline {
     }
     
     stages{
-        stage('SCM'){
+        stage('Git'){
             steps{
                 git 'https://github.com/javahometech/dockeransiblejenkins'
             }
