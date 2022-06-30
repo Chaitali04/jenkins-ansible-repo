@@ -57,3 +57,21 @@ pipeline {
         }
     }
 }
+
+def artifactUrl = "http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220630.175647-3.war"
+
+withEnv(["ARTIFACT_URL=${artifactUrl}", "APP_NAME=${pom.artifactId}"]) {
+  echo "The URL is ${env.ARTIFACT_URL} and the app name is ${env.APP_NAME}"
+
+  // install galaxy roles
+  sh "ansible-galaxy install -vvv -r provision/requirements.yml -p provision/roles/"       
+
+  ansiblePlaybook colorized: true,
+  credentialsId: 'ssh-jenkins',
+  limit: "${HOST_PROVISION}",
+  installation: 'ansible',
+  inventory: 'provision/app-server.ini',
+  playbook: 'provision/ansible-deploy.yml',
+  sudo: true,
+  sudoUser: 'jenkins'
+}
