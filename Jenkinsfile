@@ -68,7 +68,7 @@ pipeline {
 
                         ansiblePlaybook colorized: true,
                         credentialsId: 'ssh-jenkins',
-                        limit: "${HOST_PROVISION}",
+                        // limit: "${HOST_PROVISION}",
                         installation: 'ansible',
                         inventory: 'app-server.ini',
                         playbook: 'ansible-deploy.yml',
