@@ -1,2 +1,2 @@
 [app_server]
-ansible_host=192.168.33.15 ansible_connection=ssh  ansible_port=22
+ansible_host=192.168.1.15 ansible_connection=ssh  ansible_port=22
