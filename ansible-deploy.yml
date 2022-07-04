@@ -3,8 +3,6 @@
   hosts: app_server
   become: yes
   become_user: root
-  roles:
-    - geerlingguy.java
 
 - name: Download Application from Nexus Repo
   hosts: app_server
