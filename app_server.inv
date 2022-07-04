@@ -1,9 +1,10 @@
 [app_server]
 192.168.33.15
+
 [app_server:vars]
-anisble_user=vagrant
-anisble_password=vagrant
-anisble_port=5986
-anisble_connection=winrm
-anisble_winrm_scheme=https
-anisble_winrm_server_cert_validation=ignore
+ansible_user=vagrant
+ansible_password=vagrant
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
