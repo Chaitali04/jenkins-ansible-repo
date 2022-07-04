@@ -12,6 +12,6 @@ tasks:
   - get_url:
       force: yes
       url: "{{ lookup('env','ARTIFACT_URL') }}"
-      dest: "/tmp/{{ lookup('env','APP_NAME') }}.jar"
+      dest: "/tmp/{{ lookup('env','APP_NAME') }}.war"
   - stat:
-      path: "/tmp/{{ lookup('env','APP_NAME') }}.jar"
+      path: "/tmp/{{ lookup('env','APP_NAME') }}.war"
