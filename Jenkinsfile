@@ -12,7 +12,7 @@ pipeline {
     stages{
         stage('Git'){
             steps{
-                git 'https://github.com/javahometech/dockeransiblejenkins'
+                git 'https://github.com/Chaitali04/jenkins-ansible-repo'
             }
         }
         stage('Maven Build'){
