@@ -64,7 +64,7 @@ pipeline {
                         echo "The URL is ${env.ARTIFACT_URL} and the app name is ${env.APP_NAME}"
 
                         // install galaxy roles
-                        // sh "ansible-galaxy install -vvv -r requirements.yml"       
+                        sh "ansible-galaxy install -vvv -r requirements.yml"       
 
                         ansiblePlaybook colorized: true,
                         credentialsId: 'ssh-jenkins',
