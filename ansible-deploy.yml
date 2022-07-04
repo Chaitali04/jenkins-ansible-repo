@@ -1,17 +1,17 @@
 ---
 - name: Install Java
-hosts: app_server
-become: yes
-become_user: root
-roles:
-  - geerlingguy.java
+  hosts: app_server
+  become: yes
+  become_user: root
+  roles:
+    - geerlingguy.java
 
 - name: Download Application from Nexus Repo
-hosts: app_server
-tasks:
-  - get_url:
-      force: yes
-      url: "{{ lookup('env','ARTIFACT_URL') }}"
-      dest: "/tmp/{{ lookup('env','APP_NAME') }}.war"
-  - stat:
-      path: "/tmp/{{ lookup('env','APP_NAME') }}.war"
+  hosts: app_server
+  tasks:
+    - get_url:
+        force: yes
+        url: "{{ lookup('env','ARTIFACT_URL') }}"
+        dest: "/tmp/{{ lookup('env','APP_NAME') }}.war"
+    - stat:
+        path: "/tmp/{{ lookup('env','APP_NAME') }}.war"
