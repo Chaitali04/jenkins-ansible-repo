@@ -64,7 +64,7 @@ pipeline {
                         echo "The URL is ${env.ARTIFACT_URL} and the app name is ${env.APP_NAME}"      
                     }
                     
-                    ansiblePlaybook inventory: 'app-server.inv', playbook: 'ansible-deploy.yml'
+                    ansiblePlaybook inventory: 'app_server.inv', playbook: 'ansible-deploy.yml'
                }
            }
         }
