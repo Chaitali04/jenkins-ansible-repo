@@ -5,6 +5,6 @@
   become_user: root
   tasks:
     - name: copy war into VM
-      copy:
-        remote_src: http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220704.183055-1.war
+      get_url:
+        url: http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220704.183055-1.war
         dest: C:\app-deployment
