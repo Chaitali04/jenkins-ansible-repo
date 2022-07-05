@@ -1,7 +1,7 @@
 ---
 - name: Playbook deploy
   hosts: app_server
-  become: yes
+  become_method: runas
   become_user: root
   tasks:
     - name: copy war into VM
