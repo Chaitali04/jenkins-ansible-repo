@@ -1,15 +1,10 @@
 ---
-- name: Install Java
+- name: Playbook deploy
   hosts: app_server
   become: yes
   become_user: root
-
-- name: Download Application from Nexus Repo
-  hosts: app_server
   tasks:
-    - get_url:
-        force: yes
-        url: "{{ lookup('env','ARTIFACT_URL') }}"
-        dest: "/tmp/{{ lookup('env','APP_NAME') }}.war"
-    - stat:
-        path: "/tmp/{{ lookup('env','APP_NAME') }}.war"
+    - name: copy war into VM
+      copy:
+        src: http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220704.183055-1.war
+        dest: C:\
