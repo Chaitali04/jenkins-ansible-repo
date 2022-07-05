@@ -7,4 +7,4 @@
     - name: copy war into VM
       copy:
         src: http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220704.183055-1.war
-        dest: C:\
+        dest: C:\app-deployment
