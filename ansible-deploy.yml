@@ -10,4 +10,4 @@
         url_username: admin            
         url_password: admin    
         force_basic_auth: yes
-        dest: C:\app-deployment
+        dest: C:\app_deployment
