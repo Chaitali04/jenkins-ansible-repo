@@ -7,4 +7,7 @@
     - name: copy war into VM
       win_copy:
         remote_src: http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220704.183055-1.war
+        user: "{{ admin }}"            
+        password: "{{ admin }}"    
+        force_basic_auth: yes
         dest: C:\app-deployment
