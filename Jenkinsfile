@@ -58,7 +58,7 @@ pipeline {
         stage('Deploy'){
            steps{
                script{
-                    def artifactUrl = "http://192.168.1.16:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220704.183055-1.war"
+                    def artifactUrl = "http://localhost:8081/repository/nexus-repo/in/javahome/dockeransible/1.0-SNAPSHOT/dockeransible-1.0-20220718.052212-43.war"
 
                     withEnv(["ARTIFACT_URL=${artifactUrl}", "APP_NAME=${pom.artifactId}"]) {
                         echo "The URL is ${env.ARTIFACT_URL} and the app name is ${env.APP_NAME}"      
